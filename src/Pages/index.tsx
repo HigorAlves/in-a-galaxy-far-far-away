@@ -1,22 +1,20 @@
 import React from 'react';
-import Block from 'react-blocks';
 
-import { Stars, SearchBar, SpaceshipCard } from 'Components';
+import { ShipsProvider } from 'Store';
 
-import { Container, Header } from './style';
-
-const Home = () => (
-	<React.Fragment>
-		<Stars />
-		<Container layout justifyCenter>
-			<Header>
-				<h1>Star Wars: How many stops</h1>
-				<p>Find the better Spaceship for your travel</p>
-				<SearchBar />
-			</Header>
-			<SpaceshipCard />
-		</Container>
-	</React.Fragment>
+const Home = (): React.ReactElement => (
+	<ShipsProvider>
+		<header style={{ textAlign: 'center', marginTop: 40 }}>
+			<h1>Star Wars: How many Stops</h1>
+			<p>Find the better Spaceship for your travel!</p>
+			<small>
+				Created by:
+				<a href='https://github.com/higoralves/' target='blank'>
+					Higor Alves
+				</a>
+			</small>
+		</header>
+	</ShipsProvider>
 );
 
 export default Home;

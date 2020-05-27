@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
+import BgImage from '../Images/stars.png';
 import Color from './Colors';
 
 const GlobalStyle = createGlobalStyle`
@@ -7,14 +8,14 @@ const GlobalStyle = createGlobalStyle`
 	* {
   	margin: 0;
   	padding: 0;
-		font-family: "Quicksand", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+		font-family: "Raleway", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
   'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
   'Segoe UI Emoji', 'Segoe UI Symbol';
 		font-variant-numeric: tabular-nums;
 	}
 
 	body {
-		background-color:  ${Color.background};
+		background: ${Color.background} url(${BgImage}) no-repeat top right fixed;
 	}
 
 	html {
@@ -22,7 +23,12 @@ const GlobalStyle = createGlobalStyle`
 		word-wrap: break-word;
 	}
 
-	h1,
+	h1 {
+		font-size: 3rem;
+		color: ${Color.white};
+		font-weight: bold;
+	}
+
 	h2 {
   	font-weight: 300;
 	}
@@ -35,32 +41,17 @@ const GlobalStyle = createGlobalStyle`
 
 	p{
 		font-weight: 300;
+		color: ${Color.white};
 	}
 
-	mark {
-		background: #FFE58F;
-		color: 'black';
-		padding: 0 2px 0 1px;
+	small {
+		color: ${Color.font};
 	}
 
-	code {
-		background: #F2F2F2;
-    color: #666;
-		border: 1px solid #ddd;
-    border-left: 1px solid #f36d33;
-		border-radius: 2px;
-    page-break-inside: avoid;
-    font-family: monospace;
-    line-height: 1.6;
-    max-width: 100%;
-    overflow: auto;
-    padding: 2px 2px;
-    display: block;
-    word-wrap: break-word;
-	}
-
-	u {
-  	text-decoration: underline;
+	a {
+		appearance: none;
+		color: ${Color.yellow};
+		text-decoration: none;
 	}
 `;
 

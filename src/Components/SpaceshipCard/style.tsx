@@ -9,7 +9,7 @@ export const Container = styled.section`
 	background-color: #fff;
 	border-radius: 5px;
 	border-width: 2px;
-	border-color: ${Colors.primary};
+	border-color: ${Colors.yellow};
 	border-style: solid;
 `;
 
