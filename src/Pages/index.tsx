@@ -2,6 +2,8 @@ import React from 'react';
 
 import { ShipsProvider } from 'Store';
 
+import Colors from 'Assets/Theme/Colors';
+
 const Home = (): React.ReactElement => (
 	<ShipsProvider>
 		<header style={{ textAlign: 'center', marginTop: 40 }}>
@@ -14,6 +16,27 @@ const Home = (): React.ReactElement => (
 				</a>
 			</small>
 		</header>
+		<section style={{ marginTop: 30, display: 'flex', justifyContent: 'center' }}>
+			<input
+				name='input'
+				type='number'
+				min='0'
+				placeholder='How many MGLT?'
+				style={{
+					height: 50,
+					fontSize: '1.5rem',
+					borderRadius: 4,
+					appearance: 'none',
+					borderColor: Colors.red,
+					borderWidth: 2,
+					outline: 'none',
+					backgroundColor: Colors.backgroundSecondary,
+					borderStyle: 'solid',
+					color: Colors.font,
+					paddingLeft: 10,
+				}}
+			/>
+		</section>
 	</ShipsProvider>
 );
 
