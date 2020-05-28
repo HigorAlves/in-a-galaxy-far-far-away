@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import API from 'Services/StarWarsAPI';
+import { getShips } from 'Services/StarWarsAPI';
 
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix
 interface ISpaceShip {
@@ -14,8 +14,12 @@ const Ships: ISpaceShip = {
 const ShipsProvider = ({ children }: { children: React.ReactNode }): React.ReactElement => {
 	const [ships, setShips] = useState<[ISpaceShip]>([Ships]);
 
+	const test = async () => {
+		const restul = getShips();
+		// console.log(restul);
+	};
 	useEffect(() => {
-		API.get('?page=1').then((data) => console.log(data.data));
+		console.log(getShips());
 		//eslint-disable-next-line
 	}, []);
 
@@ -26,8 +30,3 @@ const ShipsProvider = ({ children }: { children: React.ReactNode }): React.React
 const ShipsContext = React.createContext(Ships);
 
 export { ShipsContext, ShipsProvider };
-
-// BUSCAR DA API SEMPRE QUE O SITE ABRIR
-// ADICIONAR AS FOTOS NOS CARDS ASSIM QUE O SISTEMA CARREGAR OS DADOS
-// LISTAR TODAS AS OPÇOES DE NAVE
-// QUANDO USUARIO MUDAR O INPUT MUDAR NOS CARDS OS VALORES QUE CADA NAVE GASTA
