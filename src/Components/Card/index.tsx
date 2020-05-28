@@ -2,15 +2,21 @@ import React from 'react';
 
 import { Card, Image, VerticalDivider, Title, InfoContainer, Text, HorizontalDivider } from './styles';
 
-const CardComponent = (): React.ReactElement => (
+interface Props {
+	name: string;
+	mglt: number;
+	stops: number;
+}
+
+const CardComponent = (props: Props): React.ReactElement => (
 	<Card>
 		<Image src={require('../../Assets/Images/example.jpeg')} alt='Example Image' />
 		<VerticalDivider />
-		<Title>Death Star</Title>
+		<Title>{props.name}</Title>
 		<InfoContainer>
-			<Text>MGLT: 10</Text>
+			<Text>MGLT: {props.mglt}</Text>
 			<HorizontalDivider />
-			<Text>Stops: 6</Text>
+			<Text>Stops: {props.stops}</Text>
 		</InfoContainer>
 	</Card>
 );

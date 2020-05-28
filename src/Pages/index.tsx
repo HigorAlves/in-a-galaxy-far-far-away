@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Row, Col } from 'react-bootstrap';
 
 import { ShipsContext } from 'Store';
 
@@ -15,7 +16,7 @@ const Home = (): React.ReactElement => {
 			<Input />
 			{ships.length < 1 ? <Loading /> : null}
 			<Container>
-				<Card />
+				{ships.length > 1 ? ships.map((ship: any) => <Card key={ship.name} name={ship.name} mglt={ship.mglt} stops={0} />) : null}
 			</Container>
 		</>
 	);

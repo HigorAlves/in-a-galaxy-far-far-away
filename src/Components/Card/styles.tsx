@@ -9,6 +9,7 @@ export const Card = styled.div`
 	border-color: ${Colors.red};
 	border-width: 1px;
 	border-style: solid;
+	margin: 10px;
 `;
 
 export const Image = styled.img`
