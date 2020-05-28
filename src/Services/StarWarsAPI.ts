@@ -30,15 +30,15 @@ const getShips = async () => {
 					break;
 					case 'week':
 				case 'weeks':
-						time = parseInt(consumables[0]) * (24 * 7);
+						time = parseInt(consumables[0]) * 168;
 					break;
 					case 'month':
 					case 'months':
-					time = parseInt(consumables[0]) * (24 * 7 * 30);
+					time = parseInt(consumables[0]) * 730;
 					break;
 					case 'year':
 				case 'years':
-						time = parseInt(consumables[0]) * (24 * 365);
+						time = parseInt(consumables[0]) * 8760;
 						break;
 				default:
 						time = 0;

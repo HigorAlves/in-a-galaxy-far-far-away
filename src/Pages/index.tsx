@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import React, { useContext, useState } from 'react';
 
 import { ShipsContext } from 'Store';
 
@@ -9,14 +8,20 @@ import { Container } from './style';
 
 const Home = (): React.ReactElement => {
 	const ships = useContext(ShipsContext);
+	const [mglt, setMglt] = useState(0);
 
 	return (
 		<>
 			<Header />
-			<Input />
+			<Input value={0} set={setMglt} />
 			{ships.length < 1 ? <Loading /> : null}
 			<Container>
-				{ships.length > 1 ? ships.map((ship: any) => <Card key={ship.name} name={ship.name} mglt={ship.mglt} stops={0} />) : null}
+				{ships.length > 1
+					? ships.map((ship: any) => {
+							const stops = mglt / (ship.mglt * ship.consumables);
+							return <Card key={ship.name} name={ship.name} mglt={ship.mglt} stops={Math.floor(stops)} />;
+					  })
+					: null}
 			</Container>
 		</>
 	);
