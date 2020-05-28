@@ -1,3 +1,3 @@
-import SpaceshipCard from './SpaceshipCard';
+import Header from 'Components/Header';
 
-export { SpaceshipCard };
+export { Header };

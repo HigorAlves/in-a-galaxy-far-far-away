@@ -4,18 +4,11 @@ import { ShipsProvider } from 'Store';
 
 import Colors from 'Assets/Theme/Colors';
 
+import { Header } from 'Components';
+
 const Home = (): React.ReactElement => (
 	<ShipsProvider>
-		<header style={{ textAlign: 'center', marginTop: 40 }}>
-			<h1>Star Wars: How many Stops</h1>
-			<p>Find the better Spaceship for your travel!</p>
-			<small>
-				Created by:
-				<a href='https://github.com/higoralves/' target='blank'>
-					Higor Alves
-				</a>
-			</small>
-		</header>
+		<Header />
 		<section style={{ marginTop: 30, display: 'flex', justifyContent: 'center' }}>
 			<input
 				name='input'
