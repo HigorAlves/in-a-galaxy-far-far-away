@@ -38,8 +38,17 @@ const Home = (): React.ReactElement => (
 			/>
 		</section>
 		<section style={{ marginTop: 40, marginLeft: 40 }}>
-			<div style={{ backgroundColor: Colors.backgroundSecondary, width: 200, borderRadius: 5 }}>
-				<img src={require('../Assets/Images/example.jpeg')} width='200' height='200' style={{ margin: 0 }} />
+			<div
+				style={{
+					backgroundColor: Colors.backgroundSecondary,
+					width: 200,
+					borderRadius: 5,
+					borderColor: Colors.red,
+					borderWidth: 1,
+					borderStyle: 'solid',
+				}}
+			>
+				<img src={require('../Assets/Images/example.jpeg')} width='200' height='200' style={{ marginTop: 1.5 }} />
 				<div style={{ height: 2, backgroundColor: Colors.red, width: 200, marginBottom: 5 }} />
 				<h3 style={{ padding: 5, fontWeight: 'bold', textAlign: 'center' }}>Death Star</h3>
 				<div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginTop: 5, paddingBottom: 5 }}>
