@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Colors from 'Assets/Theme/Colors';
-
 import { Container, Input } from './styles';
 
 const InputComponent = (): React.ReactElement => (

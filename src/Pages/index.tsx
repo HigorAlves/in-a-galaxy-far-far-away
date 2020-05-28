@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import { ShipsProvider } from 'Store';
+import { ShipsContext } from 'Store';
 
-import { Header, Input, Card } from 'Components';
+import { Header, Input, Card, Loading } from 'Components';
 
 import { Container } from './style';
 
-const Home = (): React.ReactElement => (
-	<ShipsProvider>
-		<Header />
-		<Input />
-		<Container>
-			<Card />
-		</Container>
-	</ShipsProvider>
-);
+const Home = (): React.ReactElement => {
+	const ships = useContext(ShipsContext);
+
+	return (
+		<>
+			<Header />
+			<Input />
+			{ships.length < 1 ? <Loading /> : null}
+			<Container>
+				<Card />
+			</Container>
+		</>
+	);
+};
 
 export default Home;
