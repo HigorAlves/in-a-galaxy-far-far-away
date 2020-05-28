@@ -4,32 +4,13 @@ import { ShipsProvider } from 'Store';
 
 import Colors from 'Assets/Theme/Colors';
 
-import { Header } from 'Components';
+import { Header, Input } from 'Components';
 
 const Home = (): React.ReactElement => (
 	<ShipsProvider>
 		<Header />
-		<section style={{ marginTop: 30, display: 'flex', justifyContent: 'center' }}>
-			<input
-				name='input'
-				type='number'
-				min='0'
-				placeholder='How many MGLT?'
-				style={{
-					height: 50,
-					fontSize: '1.5rem',
-					borderRadius: 4,
-					appearance: 'none',
-					borderColor: Colors.red,
-					borderWidth: 2,
-					outline: 'none',
-					backgroundColor: Colors.backgroundSecondary,
-					borderStyle: 'solid',
-					color: Colors.font,
-					paddingLeft: 10,
-				}}
-			/>
-		</section>
+		<Input />
+
 		<section style={{ marginTop: 40, marginLeft: 40 }}>
 			<div
 				style={{
