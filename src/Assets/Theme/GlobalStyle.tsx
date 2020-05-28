@@ -37,6 +37,7 @@ const GlobalStyle = createGlobalStyle`
 	h4,
 	h5 {
   	font-weight: 400;
+		color: ${Color.white};
 	}
 
 	p{
